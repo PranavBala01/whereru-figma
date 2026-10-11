@@ -9,8 +9,9 @@ trap 'rm -rf "$stage_dir"' EXIT
 # canonical Vite layout in a temporary build workspace.
 mkdir -p "$stage_dir/src" "$stage_dir/.figma/make"
 cp index.html vite.config.ts favicon.svg "$stage_dir/"
+cp -R public "$stage_dir/public"
 cp .figma/make/site.json "$stage_dir/.figma/make/"
-cp App.tsx CampusMap.tsx index.css LocationPicker.tsx main.tsx mapData.ts roomRecognition.ts ui.tsx "$stage_dir/src/"
+cp App.tsx CampusMap.tsx index.css LocationPicker.tsx main.tsx mapData.ts reports.tsx roomRecognition.ts ui.tsx "$stage_dir/src/"
 ln -s "$repo_root/node_modules" "$stage_dir/node_modules"
 
 # Build in development mode to emit sourcemaps.
